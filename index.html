@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekhtier.ahmed</title>
+    <link rel="stylesheet" href="style.css"
+    
+</head>
+<body>
+ <div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo3.png" width="15% "height="10%" class="LOGO1">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Services-left">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul> 
+        </nav><br><br><br>
+        <div class="header-text">
+            <p>Website Expert</p>
+            <h1>Hi, I am <span>Ekhtier Ahmed </span><br> from <span>Bangladesh.</span></h1>
+        </div>
+    </div>
+ </div>  
+  <br><br>
+<!---------About me--------->
+<div id="About">
+    <div class="container">
+        <h1 class="Sub-title"> About Me</h1>
+        <div class="About-list">
+           <div>
+             
+            <h2>Skills</h2><br>
+                <ul>
+                     <p><li>Designing Website</li></p><br>
+                     <p><li>Design Ui/Ux</li></p><br>
+                     <p><li>Developing Website and Apps</li></p><br>
+                </ul></p>
+            <a href="#">Learn more</a><br>
+           </div> 
+           <div>
+             
+            <h2>Experiences</h2><br>
+            <p><ul>
+                <p><li>Designing Website since 2 years</li></p> <br>
+                 <p><li>Launching websites for a long time</li></p><br>
+                 <p><li>Others</li></p><br>
+            </ul></p>
+            <a href="#">Learn more</a><br>
+        </div>
+        <div>
+             
+            <h2>Educations</h2><br>
+            <p><ul>
+                <li>HSC<br> Waymark Ideal College</li><br>
+                <li>B.Sc in CSE<br> World University of Bangladesh</li><br>
+            </ul></p>
+            <a href="#">Learn more</a><br>
+    </div>
+</div>
+<br><br>
+<!--------services-------->
+<div id="Services-left">
+    <div class="container">
+        <h1 class="Sub-title"> My services</h1>
+        <div class="services-list">
+           <div> 
+            <h2>Web design</h2><br>
+            <p><li>Qualitifull web design service</li></p><br>
+            <a href="#">Learn more</a><br>
+           </div> 
+           <div>
+             
+            <h2>Development</h2><br>
+            <p><li>Trusted development service</li></p><br>
+            <a href="#">Learn more</a><br>
+        </div>
+        <div>
+             
+            <h2>Ui / Ux design</h2><br>
+            <p><li>Unique Ui / Ux design for company</li></p><br>
+            <a href="#">Learn more</a><br>
+    </div>
+</div><br><br>
+ 
+<div id="contact">
+    <div id="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-tittle">Contact Me</h1>
+                <p>saclainchonchol440@gmail.com</p>
+                <p>+88 01721423539</p> 
+                </div>
+   
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input tybe="text" name="Nmae" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button><br><br><br>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div><br>
+        <div class="copyright">
+            <p>Copyright @ Ekhtier. Made with</p>
+        </div>
+    </div>
+    
+</div>
+ 
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbynpW1M71-3kinWsZ1yCCppIOcvFXE46zcou1hN4AJsZSIntCvsLvl6dUDHUJuUwac/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response =>  {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML =""
+
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
